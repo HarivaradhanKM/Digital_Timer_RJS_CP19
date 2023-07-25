@@ -41,7 +41,7 @@ class DigitalTimer extends Component {
         <p className="limit-label">Set Timer Limit</p>
         <div className="timer-limit-controller">
           <button
-            className="limit-controller-button"
+            className="limit-controller-btn_decrease"
             disabled={isButtonsDisabled}
             onClick={this.onDecreaseTimerLimitInMinutes}
             type="button"
@@ -52,7 +52,7 @@ class DigitalTimer extends Component {
             <p className="limit-label">{timerLimitInMinutes}</p>
           </div>
           <button
-            className="limit-controller-button"
+            className="limit-controller-btn_increase"
             disabled={isButtonsDisabled}
             onClick={this.onIncreaseTimerLimitInMinutes}
             type="button"
@@ -122,7 +122,7 @@ class DigitalTimer extends Component {
             src={startOrPauseImageUrl}
           />
           <p className="timer-controller-label">
-            {isTimerRunning ? 'Pause' : 'Start'}{' '}
+            {isTimerRunning ? 'Pause' : 'Start'}
           </p>
         </button>
         <button
@@ -150,7 +150,7 @@ class DigitalTimer extends Component {
     const stringifiedMinutes = minutes > 9 ? minutes : `0${minutes}`
     const stringifiedSeconds = seconds > 9 ? seconds : `0${seconds}`
 
-    return `${stringifiedMinutes} : ${stringifiedSeconds}`
+    return `${stringifiedMinutes}:${stringifiedSeconds}`
   }
 
   render() {
